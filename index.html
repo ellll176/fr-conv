@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Perpisahan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Tinggal, Teman-teman!</h1>
+    <p>Masukkan tanggal lahir kamu untuk melihat pesan perpisahan spesial:</p>
+    <input type="date" id="birthdate">
+    <button onclick="showMessage()">Lihat Pesan</button>
+    <p class="message" id="message"></p>
+
+    <script>
+        const messages = {
+            "2006-01-01": "Terima kasih telah menjadi teman yang luar biasa! Semoga sukses selalu!",
+            "2006-05-15": "Kenangan kita bersama tidak akan pernah kulupakan. Sampai jumpa di masa depan!",
+            "2006-10-30": "Kamu adalah bagian penting dari perjalanan ini. Semoga kita bertemu lagi!"
+        };
+
+        function showMessage() {
+            const birthdate = document.getElementById("birthdate").value;
+            const message = messages[birthdate] || "Maaf, tidak ada pesan untuk tanggal lahir ini. Tapi aku tetap mendoakan yang terbaik untukmu!";
+            document.getElementById("message").textContent = message;
+        }
+    </script>
+</body>
+</html>
